@@ -2,6 +2,10 @@ import pandas as pd
 import plotly.express as px
 from dash import Dash, html, dcc
 
+# Initialize the app
+app = Dash()
+server = app.server
+
 parque_file = 'https://media.githubusercontent.com/media/mitanshu7/PaperMatch_Analysis/refs/heads/main/bluuebunny/arxiv_abstract_embedding_mxbai_large_v1_milvus_binary/umap/hamming/all_years.parquet'
 df = pd.read_parquet(parque_file)
 
@@ -26,9 +30,6 @@ fig.update_layout(
         eye=dict(x=1.25, y=0, z=0.125)
     )
 )
-
-# Initialize the app
-app = Dash()
 
 # App layout
 app.layout = [
