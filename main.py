@@ -32,16 +32,40 @@ fig.update_traces(marker_size = 1)
 # Add a title and axis labels, and adjust the camera angle and height
 fig.update_layout(
     title='3D Map of arXiv',
-    scene=dict(
-        xaxis_title='',
-        yaxis_title='',
-        zaxis_title=''
-    ),
     height=800,  # Set the height of the plot
     scene_camera=dict(
         eye=dict(x=1, y=-0.125, z=0.125)
     ),
     scene_dragmode='turntable',  # 'turntable', 'orbit', 'zoom', 'pan', etc
+)
+
+fig.update_layout(
+    scene=dict(
+        xaxis=dict(
+            showgrid=False,
+            zeroline=False,
+            showbackground=False,
+            showticklabels=False,  # Hide tick labels
+            ticks='',              # Hide ticks
+            title=''               # Remove axis title
+        ),
+        yaxis=dict(
+            showgrid=False,
+            zeroline=False,
+            showbackground=False,
+            showticklabels=False,
+            ticks='',
+            title=''
+        ),
+        zaxis=dict(
+            showgrid=False,
+            zeroline=False,
+            showbackground=False,
+            showticklabels=False,
+            ticks='',
+            title=''
+        )
+    )
 )
 
 # App layout
