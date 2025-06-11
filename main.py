@@ -31,11 +31,11 @@ fig.update_traces(marker_size = 1)
 
 # Add a title and axis labels, and adjust the camera angle and height
 fig.update_layout(
-    title='3D Map of Arxiv Abstracts',
+    title='3D Map of arXiv',
     scene=dict(
-        xaxis_title='UMAP X',
-        yaxis_title='UMAP Y',
-        zaxis_title='UMAP Z'
+        xaxis_title='',
+        yaxis_title='',
+        zaxis_title=''
     ),
     height=800,  # Set the height of the plot
     scene_camera=dict(
