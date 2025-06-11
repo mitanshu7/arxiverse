@@ -10,17 +10,17 @@ parquet_file = "data/all_years.parquet"
 df = pd.read_parquet(parquet_file)
 
 # Sample a subset of the data for visualization
-df_sampled = df.sample(100000)
+df = df.sample(100000)
 
 # Scale factor to spread the points
 scale_factor = 10
 
-df_sampled['x'] = df_sampled['x'] * scale_factor
-df_sampled['y'] = df_sampled['y'] * scale_factor
-df_sampled['z'] = df_sampled['z'] * scale_factor
+df['x'] = df['x'] * scale_factor
+df['y'] = df['y'] * scale_factor
+df['z'] = df['z'] * scale_factor
 
 # Plot the 3D scatter plot using Plotly Express
-fig = px.scatter_3d(df_sampled, x='x', y='y', z='z', hover_name='title', hover_data='year', color='categories',  opacity=0.6)
+fig = px.scatter_3d(df, x='x', y='y', z='z', hover_name='title', hover_data='year', color='categories',  opacity=0.6)
 
 # Keep legend markers the same size
 fig.update_layout(
