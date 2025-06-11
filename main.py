@@ -12,13 +12,6 @@ df = pd.read_parquet(parquet_file)
 # Sample a subset of the data for visualization
 df = df.sample(100000)
 
-# Scale factor to spread the points
-scale_factor = 10
-
-df['x'] = df['x'] * scale_factor
-df['y'] = df['y'] * scale_factor
-df['z'] = df['z'] * scale_factor
-
 # Plot the 3D scatter plot using Plotly Express
 fig = px.scatter_3d(df, x='x', y='y', z='z', hover_name='title', hover_data='year', color='categories',  opacity=0.6)
 
